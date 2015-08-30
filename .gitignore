@@ -1,0 +1,3 @@
+*.pyc
+/PyOnfido.egg-info
+/.eggs
