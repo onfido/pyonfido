@@ -2,17 +2,16 @@ language: python
 python:
   - "2.6"
   - "2.7"
-  - "pypy"
   - "3.2"
   - "3.3"
   - "3.4"
 install:
-  - pip install unittest2 pycurl flake8 --use-mirrors
+  - pip install unittest2 flake8 --use-mirrors
   - python setup.py install
+  - pip install coveralls
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then flake8 onfido; fi
   - python -W always setup.py test
-cache: apt
-matrix:
-  allow_failures:
-    - python: pypy
+  - coverage run --source=onfido setup.py test
+after_success:
+  - coveralls
