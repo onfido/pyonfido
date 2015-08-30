@@ -8,4 +8,4 @@ class ImportTests(unittest2.TestCase):
         import onfido # flake8: noqa
 
     def test_from_import(self):
-        from onfido import * # flake8: noqa
+        from onfido import Api # flake8: noqa

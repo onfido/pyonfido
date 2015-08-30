@@ -1,5 +1,5 @@
-from requestor import OnfidoApiRequestor
-from resources import (
+from .requestor import OnfidoApiRequestor
+from .resources import (
     Applicants,
     Documents,
     Checks,

@@ -30,7 +30,7 @@ under_test_per_page = 20
 
 under_test_document = {
     "type": "passport",
-    "file": bytes([50, 19, 100])  # some nonsense
+    "file": None # bytes([50, 19, 100])  # some nonsense
 }
 
 under_test_check_id = "8546921-123123-123123"
