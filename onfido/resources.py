@@ -20,8 +20,8 @@ class ApiResource(object):
     def post(self, url, data):
         return self.requestor.post(url, data)
 
-    def get(self, url, data=None):
-        return self.requestor.get(url, data)
+    def get(self, url, params=None):
+        return self.requestor.get(url, params)
 
 
 class Applicants(ApiResource):

@@ -16,8 +16,8 @@ class Api(object):
         else:
             self.requestor = requestor
 
-        self.Applicants = Applicants(requestor)
-        self.Documents = Documents(requestor)
-        self.Checks = Checks(requestor)
-        self.Reports = Reports(requestor)
-        self.AddressPicker = AddressPicker(requestor)
+        self.Applicants = Applicants(self.requestor)
+        self.Documents = Documents(self.requestor)
+        self.Checks = Checks(self.requestor)
+        self.Reports = Reports(self.requestor)
+        self.AddressPicker = AddressPicker(self.requestor)

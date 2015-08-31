@@ -1,3 +1,4 @@
+import json
 import requests
 
 
@@ -13,12 +14,12 @@ class OnfidoApiRequestor(object):
     def headers(self):
         return {
             "Authorization": "Token token={0}".format(self.api_key),
-            "Accept": "application/json"
+            "Content-Type": "application/json"
         }
 
-    def post(self, url, params):
+    def post(self, url, data):
         return requests.post(self.build_url(url),
-                             params=params,
+                             data=json.dumps(data),
                              headers=self.headers())
 
     def get(self, url, params):
