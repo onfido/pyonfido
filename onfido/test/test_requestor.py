@@ -1,7 +1,7 @@
 import requests_mock
 import unittest2
 from onfido import Api
-from test_data import * # flake8: noqa
+from .test_data import * # flake8: noqa
 
 
 class RequestorTests(unittest2.TestCase):

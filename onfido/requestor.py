@@ -1,12 +1,14 @@
 import json
 import requests
 
+default_onfido_url = "https://api.onfido.com/v1/"
+
 
 class OnfidoApiRequestor(object):
 
-    def __init__(self, api_key):
+    def __init__(self, api_key, onfido_url=default_onfido_url):
         self.api_key = api_key
-        self.onfido_url = "https://api.onfido.com/v1/"
+        self.onfido_url = onfido_url
 
     def build_url(self, path):
         return self.onfido_url + path

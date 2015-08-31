@@ -1,5 +1,5 @@
 import unittest2
-from test_data import * # flake8: noqa
+from .test_data import * # flake8: noqa
 from onfido import Api
 
 
