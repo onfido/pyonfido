@@ -20,11 +20,13 @@ class OnfidoApiRequestor(object):
         }
 
     def post(self, url, data):
-        return requests.post(self.build_url(url),
-                             data=json.dumps(data),
-                             headers=self.headers())
+        response = requests.post(self.build_url(url),
+                                 data=json.dumps(data),
+                                 headers=self.headers())
+        return json.loads(response.text)
 
     def get(self, url, params):
-        return requests.get(self.build_url(url),
-                            params=params,
-                            headers=self.headers())
+        response = requests.get(self.build_url(url),
+                                params=params,
+                                headers=self.headers())
+        return json.loads(response.text)
