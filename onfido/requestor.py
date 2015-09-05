@@ -15,7 +15,7 @@ class OnfidoApiRequestor(object):
 
     def headers(self, including_file=False):
         headers = {
-           "Authorization": "Token token={0}".format(self.api_key)
+            "Authorization": "Token token={0}".format(self.api_key)
         }
 
         if including_file:
