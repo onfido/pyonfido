@@ -21,4 +21,9 @@ setup(
         'requests_mock',
         'unittest2'
     ],
+    setup_requires=[
+        'requests',
+        'requests_mock',
+        'unittest2'
+    ],
 )
