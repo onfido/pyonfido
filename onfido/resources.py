@@ -1,3 +1,8 @@
+import json
+import mimetypes
+import os
+
+
 class DocumentType():
     Passport = "passport"
     NationalIdentityCard = "national_identity_card"
@@ -17,8 +22,14 @@ class ApiResource(object):
     def __init__(self, requestor):
         self.requestor = requestor
 
-    def post(self, url, data):
-        return self.requestor.post(url, data)
+    def post(self, url, data, file=None):
+        if file:
+            return self.requestor.post(url, data, file=file)
+        return self.requestor.post(url, json.dumps(data))
+
+    def post_file(self, url, file_name, file_path, file_type, document_type):
+        return self.requestor.post_file(url, file_name, file_path, file_type,
+                                        document_type)
 
     def get(self, url, params=None):
         return self.requestor.get(url, params)
@@ -41,9 +52,23 @@ class Applicants(ApiResource):
 
 
 class Documents(ApiResource):
-    def create(self, applicant_id, document_details):
+    def create(self, applicant_id, document, document_filename, doc_type):
+        mimetypes.init()
+
+        data = {
+            "type": doc_type
+        }
+
+        filename, extension = os.path.splitext(document_filename)
+
+        files = {
+            "file":  (document_filename, document,
+                      mimetypes.types_map[extension])
+        }
+
         return self.post("applicants/{0}/documents/".format(applicant_id),
-                         document_details)
+                         data,
+                         files)
 
 
 class Checks(ApiResource):

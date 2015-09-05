@@ -13,16 +13,22 @@ class OnfidoApiRequestor(object):
     def build_url(self, path):
         return self.onfido_url + path
 
-    def headers(self):
+    def headers(self, including_file=False):
+        if including_file:
+            return {
+                "Authorization": "Token token={0}".format(self.api_key)
+            }
         return {
             "Authorization": "Token token={0}".format(self.api_key),
             "Content-Type": "application/json"
         }
 
-    def post(self, url, data):
+    def post(self, url, data, file=None):
+        h = self.headers(file is not None)
         response = requests.post(self.build_url(url),
-                                 data=json.dumps(data),
-                                 headers=self.headers())
+                                 data=data,
+                                 headers=h,
+                                 files=file)
         return json.loads(response.text)
 
     def get(self, url, params):

@@ -18,6 +18,7 @@ setup(
     ],
     install_requires=[
         'requests',
-        'unittest2',
+        'requests_mock',
+        'unittest2'
     ],
 )

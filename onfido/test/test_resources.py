@@ -4,11 +4,12 @@ from onfido import Api
 
 
 class DummyApiRequestor(object):
-    def post(self, url, params):
+    def post(self, url, params, file=None):
         return {
             "url": url,
             "params": params,
-            "method": "post"
+            "method": "post",
+            "file": file
         }
 
     def get(self, url, params):
@@ -38,8 +39,7 @@ class InterfaceTests(ResourceTestCase):
 
     def test_documents_interface(self):
         self.setup()
-        self.api.Documents.create(test_applicant_id,
-                                  test_document)
+        self.api.Documents.create(test_applicant_id, test_document, test_document_filename, test_document_type)
 
     def test_checks_interface(self):
         self.setup()
@@ -93,8 +93,7 @@ class ResourcePathAndMethodTests(ResourceTestCase):
 
     def test_documents_path_method(self):
         self.setup()
-        result = self.api.Documents.create(test_applicant_id,
-                                           test_document)
+        result = self.api.Documents.create(test_applicant_id, test_document, test_document_filename, test_document_type)
         self.assertEqual(
             "applicants/{0}/documents/".format(test_applicant_id),
             result["url"])

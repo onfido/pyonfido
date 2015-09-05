@@ -1,5 +1,6 @@
-# the test data below was all taken from https://onfido.com/documentation
+import io
 
+# the test data below was mostly taken from https://onfido.com/documentation
 test_onfido_key = "live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA"
 
 test_applicant_id = "1030303-123123-123123"
@@ -21,17 +22,19 @@ test_applicant = {
             "country": "GBR",
             "start_date": "2013-08-10"
         }
-    ]
+    ],
+    "email": "test@example.com"
 }
 
 test_page_no = 2
 
 test_per_page = 20
 
-test_document = {
-    "type": "passport",
-    "file": bytes([50, 19, 100])  # some nonsense
-}
+test_document = io.BytesIO(b"some document text \x00\x01\x02")
+
+test_document_filename = "test.bmp"
+
+test_document_type = "passport"
 
 test_check_id = "8546921-123123-123123"
 
