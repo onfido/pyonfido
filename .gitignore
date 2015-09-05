@@ -3,3 +3,5 @@
 *.egg
 /PyOnfido.egg-info
 /.eggs
+build/
+.idea
