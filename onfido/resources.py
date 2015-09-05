@@ -27,10 +27,6 @@ class ApiResource(object):
             return self.requestor.post(url, data, file=file)
         return self.requestor.post(url, json.dumps(data))
 
-    def post_file(self, url, file_name, file_path, file_type, document_type):
-        return self.requestor.post_file(url, file_name, file_path, file_type,
-                                        document_type)
-
     def get(self, url, params=None):
         return self.requestor.get(url, params)
 

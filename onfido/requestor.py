@@ -14,14 +14,14 @@ class OnfidoApiRequestor(object):
         return self.onfido_url + path
 
     def headers(self, including_file=False):
-        if including_file:
-            return {
-                "Authorization": "Token token={0}".format(self.api_key)
-            }
-        return {
-            "Authorization": "Token token={0}".format(self.api_key),
-            "Content-Type": "application/json"
+        headers = {
+               "Authorization": "Token token={0}".format(self.api_key)
         }
+        
+        if including_file:
+            headers["Content-Type"] = "application/json"
+        
+        return headers
 
     def post(self, url, data, file=None):
         h = self.headers(file is not None)
