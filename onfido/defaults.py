@@ -1,5 +1,5 @@
-page = 1
+default_page = 1
 
-per_page = 20
+default_per_page = 20
 
-onfido_url = "https://api.onfido.com/v1/"
+default_onfido_url = "https://api.onfido.com/v1/"

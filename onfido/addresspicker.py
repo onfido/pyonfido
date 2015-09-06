@@ -1,4 +1,4 @@
-from api_resource import ApiResource
+from .api_resource import ApiResource
 
 
 class AddressPicker(ApiResource):

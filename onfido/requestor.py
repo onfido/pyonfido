@@ -1,11 +1,11 @@
 import json
 import requests
-import defaults
+from .defaults import * # flake8: noqa
 
 
 class OnfidoApiRequestor(object):
 
-    def __init__(self, api_key, onfido_url=defaults.onfido_url):
+    def __init__(self, api_key, onfido_url=default_onfido_url):
         self.api_key = api_key
         self.onfido_url = onfido_url
 

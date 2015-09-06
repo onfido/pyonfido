@@ -1,5 +1,5 @@
-import defaults
-from api_resource import ApiResource
+from .api_resource import ApiResource
+from .defaults import * # flake8: noqa
 
 
 class Checks(ApiResource):
@@ -11,8 +11,8 @@ class Checks(ApiResource):
         return self.get("applicants/{0}/checks/{1}".format(applicant_id,
                         check_id))
 
-    def all(self, applicant_id, page=defaults.page,
-            per_page=defaults.per_page):
+    def all(self, applicant_id, page=default_page,
+            per_page=default_per_page):
 
         params = {
             "page": page,
