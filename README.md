@@ -51,13 +51,13 @@ The [applicant](https://onfido.com/documentation#applicants) endpoint supports t
 
 The all() operation also permits pagination
 
-    top10_applicants = api.applicants.all(1, 10):
-    next10_applicants = api.applicants.all(2, 10):
+    top10_applicants = api.Applicants.all(1, 10):
+    next10_applicants = api.Applicants.all(2, 10):
 
 or
 
-    top10_applicants = api.applicants.all(page=1, per_page=10):
-    next10_applicants = api.applicants.all(page=2, per_page=10):
+    top10_applicants = api.Applicants.all(page=1, per_page=10):
+    next10_applicants = api.Applicants.all(page=2, per_page=10):
 
 ## Documents
 
@@ -67,7 +67,7 @@ or
 
 	document_file = open("passport.png", "rb")
 
-	document = api.documents.create(applicant_id, document_file, "passport.png", "passport")
+	document = api.Documents.create(applicant_id, document_file, "passport.png", "passport")
 
 You can use any file-like object in place of the document_file parameter, so you needn't save to disk and call open() if you have the file in, say, an BytesIO object in memory.
 
