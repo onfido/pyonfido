@@ -1,11 +1,9 @@
 from .requestor import OnfidoApiRequestor
-from .resources import (
-    Applicants,
-    Documents,
-    Checks,
-    Reports,
-    AddressPicker
-)
+from .applicants import Applicants  # flake8 : noqa
+from .documents import Documents  # flake8 : noqa
+from .checks import Checks  # flake8 : noqa
+from .reports import Reports  # flake8 : noqa
+from .addresspicker import AddressPicker  # flake8 : noqa
 
 
 class Api(object):

@@ -1,12 +1,11 @@
 import json
 import requests
-
-default_onfido_url = "https://api.onfido.com/v1/"
+import defaults
 
 
 class OnfidoApiRequestor(object):
 
-    def __init__(self, api_key, onfido_url=default_onfido_url):
+    def __init__(self, api_key, onfido_url=defaults.onfido_url):
         self.api_key = api_key
         self.onfido_url = onfido_url
 
@@ -18,7 +17,7 @@ class OnfidoApiRequestor(object):
             "Authorization": "Token token={0}".format(self.api_key)
         }
 
-        if including_file:
+        if not including_file:
             headers["Content-Type"] = "application/json"
 
         return headers
