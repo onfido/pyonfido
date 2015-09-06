@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name = "PyOnfido",
-    version = "0.0.1",
+    version = "0.1",
     author = "Sean McLemon",
     author_email = "sean.mclemon@gmail.com",
     description = ("Python wrapper library for Onfido's background checking REST API."),
