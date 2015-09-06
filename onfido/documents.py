@@ -1,6 +1,6 @@
 import mimetypes
 import os
-from resources import ApiResource
+from api_resource import ApiResource
 
 
 class DocumentType():

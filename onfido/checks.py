@@ -1,5 +1,5 @@
 import defaults
-from resources import ApiResource
+from api_resource import ApiResource
 
 
 class Checks(ApiResource):
