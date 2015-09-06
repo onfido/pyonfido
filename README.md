@@ -51,11 +51,13 @@ The [applicant](https://onfido.com/documentation#applicants) endpoint supports t
 
 The all() operation also permits pagination
 
-    top10applicants = api.applicants.all(1, 10):
+    top10_applicants = api.applicants.all(1, 10):
+    next10_applicants = api.applicants.all(2, 10):
 
 or
 
-    top10applicants = api.applicants.all(page=1, per_page=10):
+    top10_applicants = api.applicants.all(page=1, per_page=10):
+    next10_applicants = api.applicants.all(page=2, per_page=10):
 
 ## Documents
 
@@ -99,10 +101,12 @@ You can use any file-like object in place of the document_file parameter, so you
 Pagination is supported through the page and per_page parameters:
 
     top10_checks = api.Checks.all(applicant_id, 1, 10):
+    top10_checks = api.Checks.all(applicant_id, 2, 10):
 
 or
 
     top10_checks = api.Checks.all(applicant_id, page=1, per_page=10):
+    top10_checks = api.Checks.all(applicant_id, page=2, per_page=10):
 
 ## Reports
 
@@ -123,10 +127,12 @@ or
 Pagination is supported through the page and per_page parameters:
 
     top10_reports = api.Reports.all(check_id, 1, 10):
+    next10_reports = api.Reports.all(check_id, 2, 10):
 
 or
 
     top10_reports = api.Reports.all(check_id, page=1, per_page=10):
+    next10_reports = api.Reports.all(check_id, page=2, per_page=10):
 
 # TODO
 * finalise submission of library into pypi

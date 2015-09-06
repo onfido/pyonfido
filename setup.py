@@ -10,6 +10,7 @@ setup(
     license = "BSD",
     keywords = "onfido background",
     url = "https://github.com/smcl/pyonfido",
+    download_url = 'https://github.com/smcl/pyonfido/tarball/0.1',
     packages=['onfido', 'onfido.test'],
     test_suite='onfido.test.all',
     classifiers=[
