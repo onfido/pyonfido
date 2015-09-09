@@ -1,16 +1,16 @@
-# pyonfido [![Build Status](https://travis-ci.org/smcl/pyonfido.svg?branch=master)](https://travis-ci.org/smcl/pyonfido) [![Coverage Status](https://coveralls.io/repos/smcl/pyonfido/badge.svg?branch=master&service=github)](https://coveralls.io/github/smcl/pyonfido?branch=master)
+# PyOnfido [![Build Status](https://travis-ci.org/smcl/pyonfido.svg?branch=master)](https://travis-ci.org/smcl/pyonfido) [![Coverage Status](https://coveralls.io/repos/smcl/pyonfido/badge.svg?branch=master&service=github)](https://coveralls.io/github/smcl/pyonfido?branch=master)
 
-Pyonfido is a python API client for Onfido's REST API.
+PyOnfido is a python API client for Onfido's REST API.
 
 # Installation
 
-You can either obtain pyonfido from PyPi:
+You can either obtain PyOnfido from PyPi:
 
     $ pip install pyonfido
 
 Or just retrieve from source and install using the provided setup.py
 
-    $ git clone https://github.com/stripe/stripe-python.git
+    $ git clone https://github.com/smcl/pyonfido.git
     $ cd pyonfido
     $ python setup.py install
 
