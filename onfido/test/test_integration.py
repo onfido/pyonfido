@@ -12,15 +12,20 @@ class IntegrationTest(unittest2.TestCase):
         api_token = os.environ['ONFIDO_INTEGRATION_TEST_API_TOKEN']
         return Api(api_token)
 
-    def test_integration_applicant(self):
-        api = self.create_api()
+
+    def create_input_applicant(self):
         timestamp = str(int(time.time()))
 
         input_applicant = test_applicant
         input_applicant["last_name"] = timestamp
         input_applicant["email"] = "{0}@example.com".format(timestamp)
 
-        created_applicant = api.Applicants.create(test_applicant)
+        return input_applicant
+
+    def test_integration_applicant(self):
+        api = self.create_api()
+        input_applicant = self.create_input_applicant()
+        created_applicant = api.Applicants.create(input_applicant)
 
         onfido_created_fields = [ "id", "href", "created_at" ]
         for onfido_field in onfido_created_fields:
@@ -54,14 +59,8 @@ class IntegrationTest(unittest2.TestCase):
 
     def test_integration_check(self):
         api = self.create_api()
-
-        timestamp = str(int(time.time()))
-
-        input_applicant = test_applicant
-        input_applicant["last_name"] = timestamp
-        input_applicant["email"] = "{0}@example.com".format(timestamp)
-
-        created_applicant = api.Applicants.create(test_applicant)
+        input_applicant = self.create_input_applicant()
+        created_applicant = api.Applicants.create(input_applicant)
 
         check_details = {
             "type": 'standard',
@@ -89,14 +88,8 @@ class IntegrationTest(unittest2.TestCase):
     def test_integration_report(self):
         # setup a new applicant + check
         api = self.create_api()
-
-        timestamp = str(int(time.time()))
-
-        input_applicant = test_applicant
-        input_applicant["last_name"] = timestamp
-        input_applicant["email"] = "{0}@example.com".format(timestamp)
-
-        created_applicant = api.Applicants.create(test_applicant)
+        input_applicant = self.create_input_applicant()
+        created_applicant = api.Applicants.create(input_applicant)
 
         check_details = {
             "type": 'standard',
