@@ -1,5 +1,6 @@
 import pkgutil
 import unittest2
+import os
 
 
 def all_names():
@@ -9,7 +10,9 @@ def all_names():
 
 
 def all():
-    return unittest2.defaultTestLoader.loadTestsFromNames(all_names())
+    if "ONFIDO_INTEGRATION_TEST_API_TOKEN" in os.environ:
+        return unittest2.defaultTestLoader.loadTestsFromNames(all_names())
+    return unit()
 
 
 def unit():

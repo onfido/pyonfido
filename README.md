@@ -124,8 +124,24 @@ or
 
     reports = api.Reports.all(check_id)
 
+# Running tests
+
+To confirm that things are working as expected you can run the unit tests using {{setup.py}} or checking the [CI](https://travis-ci.org/smcl/pyonfido)
+
+    $ python setup.py test
+
+The code should also be compliant with [PEP-8](https://www.python.org/dev/peps/pep-0008/), which you can confirm by installing and running flake8 on the onfido library:
+
+	$ pip install flake8
+    $ flake8 onfido
+
+There are also a handful of integration tests which connect to the Onfido API, they will only be run if you set the {{ONFIDO_INTEGRATION_TEST_API_TOKEN}} environment variable and run the tests:
+
+    $ ONFIDO_INTEGRATION_TEST_API_TOKEN=my_test_api_key python setup.py test
+
+The environment variable was deliberately chosen to be long and obtuse to lessen the chances that it's already set, but you should exercise caution anyway as this will result in creating a number of new applicants and checks.
+
 # TODO
 * finalise submission of library into pypi
 * improve this README
 * support constants better (DocumentType etc)
-* re-visit the interface exposed - any object we return is a simple dictionary representing the json returned, perhaps provide a simple/optional typed representation (Applicant, Report)
