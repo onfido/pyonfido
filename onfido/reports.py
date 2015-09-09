@@ -12,17 +12,12 @@ class ReportType(object):
     PEPSanctionReport = "watchlist"
     AntiMoneyLaunderingReport = "anti_money_laundering"
     StreetLevelReport = "street_level"
-    IdentityReport = "identity"
-    DocumentReport = "document"
     SexOffenderReport = "sex_offender"
     WatchlistReport = "watchlist"
     NationalCriminalReport = "national_criminal"
     EvictionReport = "eviction"
     CountyCriminalReport = "county_criminal"
     DrivingRecord = "Report driving_record"
-    IdentityReport = "identity  "
-    DocumentReport = "document"
-    CriminalRecordReport = "criminal_history"
 
 
 class Reports(ApiResource):

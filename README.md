@@ -159,20 +159,15 @@ The different document types supported by the onfido API are available by import
     my_report_type = ReportType.NegativeMediaReport # "negative_media"
     my_report_type = ReportType.DirectorshipReport # "directorship"
     my_report_type = ReportType.CriminalRecordReport # "criminal_history"
-    my_report_type = ReportType.PEPSanctionReport # "watchlist  "
+    my_report_type = ReportType.PEPSanctionReport # "watchlist"
     my_report_type = ReportType.AntiMoneyLaunderingReport # "anti_money_laundering"
-    my_report_type = ReportType.StreetLevelReport # "street_level   "
-    my_report_type = ReportType.IdentityReport # "identity      "
-    my_report_type = ReportType.DocumentReport # "document"
+    my_report_type = ReportType.StreetLevelReport # "street_level"
     my_report_type = ReportType.SexOffenderReport # "sex_offender"
     my_report_type = ReportType.WatchlistReport # "watchlist"
     my_report_type = ReportType.NationalCriminalReport # "national_criminal"
     my_report_type = ReportType.EvictionReport # "eviction"
     my_report_type = ReportType.CountyCriminalReport # "county_criminal"
-    my_report_type = ReportType.DrivingRecord # "Report driving_record"
-    my_report_type = ReportType.IdentityReport # "identity  "
-    my_report_type = ReportType.DocumentReport # "document"
-    my_report_type = ReportType.CriminalRecordReport # "criminal_history"
+    my_report_type = ReportType.DrivingRecordReport # "driving_record"
 
 # Running tests
 
