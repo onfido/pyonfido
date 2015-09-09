@@ -4,7 +4,7 @@ Pyonfido is a python API client for Onfido's REST API.
 
 # Installation
 
-You can either obtain pyonfido from PyPi (NOTE: IN PROGRESS, WILL NOT WORK):
+You can either obtain pyonfido from PyPi:
 
     $ pip install pyonfido
 
@@ -26,7 +26,7 @@ Import the onfido.Api class, and create a new instance of it passing your api to
 
 ## Applicants
 
-The [applicant](https://onfido.com/documentation#applicants) endpoint supports three operations - create(), find(), and all():
+The [applicant](https://onfido.com/documentation#applicants) endpoint supports three operations - ``create()``, ``find()``, and ``all()``:
 
 ### Create applicant
 
@@ -49,7 +49,7 @@ The [applicant](https://onfido.com/documentation#applicants) endpoint supports t
 
     applicants = api.Applicants.all()
 
-The all() operation also permits pagination
+The ``all()`` operation also permits pagination
 
     top10_applicants = api.Applicants.all(1, 10):
     next10_applicants = api.Applicants.all(2, 10):
@@ -72,11 +72,26 @@ The [documents](https://onfido.com/documentation#documents) endpoint supports on
 
 	document = api.Documents.create(applicant_id, document_file, "passport.png", "passport")
 
-You can use any file-like object in place of the document_file parameter, so you needn't save to disk and call open() if you have the file in, say, an BytesIO object in memory.
+You can use any file-like object in place of the document_file parameter, so you needn't save to disk and call ``open()`` if you have the file in, say, an ``BytesIO`` object in memory.
+
+### Document types
+
+The different document types supported by the onfido API are available by importing ``DocumentType``:
+
+    from onfido import DocumentType
+    
+    my_doc_type = DocumentType.Passport # "passport"
+    my_doc_type = DocumentType.NationalIdentityCard # "national_identity_card"
+    my_doc_type = DocumentType.WorkPermit # "work_permit"
+    my_doc_type = DocumentType.DrivingLicense # "driving_license"
+    my_doc_type = DocumentType.NationalInsurance # "national_insurance"
+    my_doc_type = DocumentType.BirthCertificate # "birth_certificate"
+    my_doc_type = DocumentType.BankStatement # "bank_statement"
+    my_doc_type = DocumentType.Unknown # "unknown"
 
 ## Checks
 
-The [checks](https://onfido.com/documentation#checks) endpoint supports three operations - create(), find() and all():
+The [checks](https://onfido.com/documentation#checks) endpoint supports three operations - ``create()``, ``find()`` and ``all()``:
 
 ### Create check
 
@@ -115,7 +130,7 @@ or
 
 ## Reports
 
-The [reports](https://onfido.com/documentation#reports) endpoint supports two operations - find() and all():
+The [reports](https://onfido.com/documentation#reports) endpoint supports two operations - ``find()`` and ``all()``:
 
 ### Retrieve report
 
@@ -131,9 +146,37 @@ The [reports](https://onfido.com/documentation#reports) endpoint supports two op
 
     reports = api.Reports.all(check_id)
 
+### Report types
+
+The different document types supported by the onfido API are available by importing ``ReportType``:
+
+    from onfido import ReportType
+    
+    my_report_type = ReportType.IdentityReport # "identity"
+    my_report_type = ReportType.DocumentReport # "document"
+    my_report_type = ReportType.EmploymentReport # "employment"
+    my_report_type = ReportType.EducationReport # "education"
+    my_report_type = ReportType.NegativeMediaReport # "negative_media"
+    my_report_type = ReportType.DirectorshipReport # "directorship"
+    my_report_type = ReportType.CriminalRecordReport # "criminal_history"
+    my_report_type = ReportType.PEPSanctionReport # "watchlist  "
+    my_report_type = ReportType.AntiMoneyLaunderingReport # "anti_money_laundering"
+    my_report_type = ReportType.StreetLevelReport # "street_level   "
+    my_report_type = ReportType.IdentityReport # "identity      "
+    my_report_type = ReportType.DocumentReport # "document"
+    my_report_type = ReportType.SexOffenderReport # "sex_offender"
+    my_report_type = ReportType.WatchlistReport # "watchlist"
+    my_report_type = ReportType.NationalCriminalReport # "national_criminal"
+    my_report_type = ReportType.EvictionReport # "eviction"
+    my_report_type = ReportType.CountyCriminalReport # "county_criminal"
+    my_report_type = ReportType.DrivingRecord # "Report driving_record"
+    my_report_type = ReportType.IdentityReport # "identity  "
+    my_report_type = ReportType.DocumentReport # "document"
+    my_report_type = ReportType.CriminalRecordReport # "criminal_history"
+
 # Running tests
 
-To confirm that things are working as expected you can run the unit tests using {{setup.py}} or checking the [CI](https://travis-ci.org/smcl/pyonfido)
+To confirm that things are working as expected you can run the unit tests using ``setup.py`` or checking the [CI](https://travis-ci.org/smcl/pyonfido)
 
     $ python setup.py test
 
@@ -142,7 +185,7 @@ The code should also be compliant with [PEP-8](https://www.python.org/dev/peps/p
 	$ pip install flake8
     $ flake8 onfido
 
-There are also a handful of integration tests which connect to the Onfido API, they will only be run if you set the {{ONFIDO_INTEGRATION_TEST_API_TOKEN}} environment variable and run the tests:
+There are also a handful of integration tests which connect to the Onfido API, they will only be run if you set the ``ONFIDO_INTEGRATION_TEST_API_TOKEN`` environment variable and run the tests:
 
     $ ONFIDO_INTEGRATION_TEST_API_TOKEN=my_test_api_key python setup.py test
 
