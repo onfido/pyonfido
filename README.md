@@ -61,6 +61,9 @@ or
 
 ## Documents
 
+The [documents](https://onfido.com/documentation#documents) endpoint supports one operation - create():
+
+
 ### Upload document
 
 	applicant_id = "1030303-123123-123123"
@@ -72,6 +75,8 @@ or
 You can use any file-like object in place of the document_file parameter, so you needn't save to disk and call open() if you have the file in, say, an BytesIO object in memory.
 
 ## Checks
+
+The [checks](https://onfido.com/documentation#checks) endpoint supports three operations - create(), find() and all():
 
 ### Create check
 
@@ -109,6 +114,8 @@ or
     next10_checks = api.Checks.all(applicant_id, page=2, per_page=10):
 
 ## Reports
+
+The [reports](https://onfido.com/documentation#reports) endpoint supports two operations - find() and all():
 
 ### Retrieve report
 
