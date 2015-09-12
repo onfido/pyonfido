@@ -24,6 +24,8 @@ Import the onfido.Api class, and create a new instance of it passing your api to
 
     api = new Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA")
 
+It is through this ```api``` object that you will interact with Onfido API.
+
 ## Applicants
 
 The [applicant](https://onfido.com/documentation#applicants) endpoint supports three operations - ``create()``, ``find()``, and ``all()``:
@@ -98,8 +100,8 @@ The [checks](https://onfido.com/documentation#checks) endpoint supports three op
 	applicant_id = "1030303-123123-123123"
 
     check_args = {
-        type: 'standard',
-        reports: [{ name: 'identity' }]
+        "type": "standard",
+        "reports": [{ "name": "identity" }]
     }
 
     check = api.Checks.create(applicant_id, create_args)
