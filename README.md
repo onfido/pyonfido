@@ -1,6 +1,6 @@
 # PyOnfido [![Build Status](https://travis-ci.org/smcl/pyonfido.svg?branch=master)](https://travis-ci.org/smcl/pyonfido) [![Coverage Status](https://coveralls.io/repos/smcl/pyonfido/badge.svg?branch=master&service=github)](https://coveralls.io/github/smcl/pyonfido?branch=master)
 
-PyOnfido is a python API client for Onfido's REST API.
+PyOnfido is a Python API client for Onfido's REST API.
 
 # Installation
 
@@ -8,7 +8,7 @@ You can either obtain PyOnfido from PyPi:
 
     $ pip install pyonfido
 
-Or just retrieve from source and install using the provided setup.py
+Or just retrieve from source and install using the provided `setup.py`:
 
     $ git clone https://github.com/smcl/pyonfido.git
     $ cd pyonfido
@@ -16,7 +16,7 @@ Or just retrieve from source and install using the provided setup.py
 
 # Usage
 
-Import the onfido.Api class, and create a new instance of it passing your api token as a parameter to the constructor:
+Import the `onfido.Api` class, and create a new instance of it passing your API token as a parameter to the constructor:
     
     from onfido import Api
 
@@ -24,13 +24,13 @@ Import the onfido.Api class, and create a new instance of it passing your api to
 
     api = new Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA")
 
-It is through this ```api``` object that you will interact with Onfido API.
+It is through this `api` object that you will interact with Onfido API.
 
 ## Applicants
 
-The [applicant](https://onfido.com/documentation#applicants) endpoint supports three operations - ``create()``, ``find()``, and ``all()``:
+The [applicant](https://onfido.com/documentation#applicants) endpoint supports three operations - `create()`, `find()`, and `all()`:
 
-### Create applicant
+#### Create applicant
 
     applicant_details = {
     	"title": "Mr",
@@ -41,17 +41,17 @@ The [applicant](https://onfido.com/documentation#applicants) endpoint supports t
 
     applicant = api.Applicants.create(applicant_details)
 
-### Retrieve applicant
+#### Retrieve applicant
 
     applicant_id = "1030303-123123-123123"	
 
     applicant = api.Applicants.find(applicant_id)
 
-### List applicants    
+#### List applicants    
 
     applicants = api.Applicants.all()
 
-The ``all()`` operation also permits pagination
+The `all()` operation also permits pagination
 
     top10_applicants = api.Applicants.all(1, 10):
     next10_applicants = api.Applicants.all(2, 10):
@@ -63,10 +63,10 @@ or
 
 ## Documents
 
-The [documents](https://onfido.com/documentation#documents) endpoint supports one operation - create():
+The [documents](https://onfido.com/documentation#documents) endpoint supports one operation - `create()`:
 
 
-### Upload document
+#### Upload document
 
 	applicant_id = "1030303-123123-123123"
 
@@ -74,11 +74,11 @@ The [documents](https://onfido.com/documentation#documents) endpoint supports on
 
 	document = api.Documents.create(applicant_id, document_file, "passport.png", "passport")
 
-You can use any file-like object in place of the document_file parameter, so you needn't save to disk and call ``open()`` if you have the file in, say, an ``BytesIO`` object in memory.
+You can use any file-like object in place of the document_file parameter, so you needn't save to disk and call `open()` if you have the file in, say, an `BytesIO` object in memory.
 
-### Document types
+#### Document types
 
-The different document types supported by the onfido API are available by importing ``DocumentType``:
+The different document types supported by the onfido API are available by importing `DocumentType`:
 
     from onfido import DocumentType
     
@@ -93,9 +93,9 @@ The different document types supported by the onfido API are available by import
 
 ## Checks
 
-The [checks](https://onfido.com/documentation#checks) endpoint supports three operations - ``create()``, ``find()`` and ``all()``:
+The [checks](https://onfido.com/documentation#checks) endpoint supports three operations - `create()`, `find()` and `all()`:
 
-### Create check
+#### Create check
 
 	applicant_id = "1030303-123123-123123"
 
@@ -106,7 +106,7 @@ The [checks](https://onfido.com/documentation#checks) endpoint supports three op
 
     check = api.Checks.create(applicant_id, create_args)
 
-### Retrieve check
+#### Retrieve check
 
     applicant_id = "1030303-123123-123123"
 
@@ -114,7 +114,7 @@ The [checks](https://onfido.com/documentation#checks) endpoint supports three op
 
     check = api.Checks.find(applicant_id, check_id)
 
-### List checks
+#### List checks
 
     applicant_id = "1030303-123123-123123"
     
@@ -132,9 +132,9 @@ or
 
 ## Reports
 
-The [reports](https://onfido.com/documentation#reports) endpoint supports two operations - ``find()`` and ``all()``:
+The [reports](https://onfido.com/documentation#reports) endpoint supports two operations - `find()` and `all()`:
 
-### Retrieve report
+#### Retrieve report
 
 	check_id = "8546921-123123-123123"
 
@@ -142,15 +142,15 @@ The [reports](https://onfido.com/documentation#reports) endpoint supports two op
 
 	report = api.Reports.find(check_id, report_id)
 
-### List reports
+#### List reports
 
     check_id = "8546921-123123-123123"
 
     reports = api.Reports.all(check_id)
 
-### Report types
+#### Report types
 
-The different document types supported by the onfido API are available by importing ``ReportType``:
+The different document types supported by the onfido API are available by importing `ReportType`:
 
     from onfido import ReportType
     
@@ -173,16 +173,16 @@ The different document types supported by the onfido API are available by import
 
 # Running tests
 
-To confirm that things are working as expected you can run the unit tests using ``setup.py`` or checking the [CI](https://travis-ci.org/smcl/pyonfido)
+To confirm that things are working as expected you can check the [CI](https://travis-ci.org/smcl/pyonfido) or run the unit tests using `setup.py`:
 
     $ python setup.py test
 
-The code should also be compliant with [PEP-8](https://www.python.org/dev/peps/pep-0008/), which you can confirm by installing and running flake8 on the onfido library:
+The code should also be compliant with [PEP 8](https://www.python.org/dev/peps/pep-0008/), which you can confirm by installing and running flake8 on the onfido library:
 
-	$ pip install flake8
+    $ pip install flake8
     $ flake8 onfido
 
-There are also a handful of integration tests which connect to the Onfido API, they will only be run if you set the ``ONFIDO_INTEGRATION_TEST_API_TOKEN`` environment variable and run the tests:
+There are also a handful of integration tests which connect to the Onfido API, they will only be run if you set the `ONFIDO_INTEGRATION_TEST_API_TOKEN` environment variable and run the tests:
 
     $ ONFIDO_INTEGRATION_TEST_API_TOKEN=my_test_api_key python setup.py test
 
