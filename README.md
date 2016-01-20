@@ -104,7 +104,7 @@ The [checks](https://onfido.com/documentation#checks) endpoint supports three op
         "reports": [{ "name": "identity" }]
     }
 
-    check = api.Checks.create(applicant_id, create_args)
+    check = api.Checks.create(applicant_id, check_args)
 
 ### Retrieve check
 
