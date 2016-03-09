@@ -17,12 +17,12 @@ Or just retrieve from source and install using the provided `setup.py`:
 # Usage
 
 Import the `onfido.Api` class, and create a new instance of it passing your API token as a parameter to the constructor:
-    
+
     from onfido import Api
 
     # ...
 
-    api = new Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA")
+    api = Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA")
 
 It is through this `api` object that you will interact with Onfido API.
 
@@ -43,11 +43,11 @@ The [applicant](https://onfido.com/documentation#applicants) endpoint supports t
 
 #### Retrieve applicant
 
-    applicant_id = "1030303-123123-123123"	
+    applicant_id = "1030303-123123-123123"
 
     applicant = api.Applicants.find(applicant_id)
 
-#### List applicants    
+#### List applicants
 
     applicants = api.Applicants.all()
 
@@ -81,7 +81,7 @@ You can use any file-like object in place of the document_file parameter, so you
 The different document types supported by the onfido API are available by importing `DocumentType`:
 
     from onfido import DocumentType
-    
+
     my_doc_type = DocumentType.Passport # "passport"
     my_doc_type = DocumentType.NationalIdentityCard # "national_identity_card"
     my_doc_type = DocumentType.WorkPermit # "work_permit"
@@ -117,7 +117,7 @@ The [checks](https://onfido.com/documentation#checks) endpoint supports three op
 #### List checks
 
     applicant_id = "1030303-123123-123123"
-    
+
     checks = api.Checks.all(applicant_id)
 
 Pagination is supported through the page and per_page parameters:
@@ -153,7 +153,7 @@ The [reports](https://onfido.com/documentation#reports) endpoint supports two op
 The different document types supported by the onfido API are available by importing `ReportType`:
 
     from onfido import ReportType
-    
+
     my_report_type = ReportType.IdentityReport # "identity"
     my_report_type = ReportType.DocumentReport # "document"
     my_report_type = ReportType.EmploymentReport # "employment"
