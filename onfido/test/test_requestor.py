@@ -16,9 +16,9 @@ def MockResponse(method):
 class RequestorTests(unittest2.TestCase):
 
     def setup_mocks(self, mock_api):
-            mock_api.post("https://api.onfido.com/v1/applicants/{0}/documents/".format(test_applicant_id), text=MockResponse("post"))
-            mock_api.post("https://api.onfido.com/v1/applicants", text=MockResponse("post"))
-            mock_api.get("https://api.onfido.com/v1/applicants/{0}".format(test_applicant_id), text=MockResponse("get"))
+            mock_api.post("https://api.onfido.com/v2/applicants/{0}/documents/".format(test_applicant_id), text=MockResponse("post"))
+            mock_api.post("https://api.onfido.com/v2/applicants", text=MockResponse("post"))
+            mock_api.get("https://api.onfido.com/v2/applicants/{0}".format(test_applicant_id), text=MockResponse("get"))
 
     def test_post(self):
         with requests_mock.mock() as mock_api:

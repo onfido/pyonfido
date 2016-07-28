@@ -5,9 +5,9 @@ from .defaults import * # flake8: noqa
 
 class OnfidoApiRequestor(object):
 
-    def __init__(self, api_key, onfido_url=default_onfido_url):
+    def __init__(self, api_key, version):
         self.api_key = api_key
-        self.onfido_url = onfido_url
+        self.onfido_url = default_onfido_url + version + '/'
 
     def build_url(self, path):
         return self.onfido_url + path

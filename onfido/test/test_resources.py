@@ -22,7 +22,7 @@ class DummyApiRequestor(object):
 
 class ResourceTestCase(unittest2.TestCase):
     def setup(self):
-        self.api = Api("", DummyApiRequestor())
+        self.api = Api("", 'v2', DummyApiRequestor())
 
 
 #  verify the interface to the API is as-expected, so just fire through
