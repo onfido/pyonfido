@@ -1,4 +1,4 @@
-# PyOnfido [![Build Status](https://travis-ci.org/smcl/pyonfido.svg?branch=master)](https://travis-ci.org/smcl/pyonfido) [![Coverage Status](https://coveralls.io/repos/smcl/pyonfido/badge.svg?branch=master&service=github)](https://coveralls.io/github/smcl/pyonfido?branch=master)
+# PyOnfido [![Build Status](https://travis-ci.org/onfido/pyonfido.svg?branch=master)](https://travis-ci.org/onfido/pyonfido) [![Coverage Status](https://coveralls.io/repos/onfido/pyonfido/badge.svg?branch=master&service=github)](https://coveralls.io/github/onfido/pyonfido?branch=master)
 
 PyOnfido is a Python API client for Onfido's REST API.
 
