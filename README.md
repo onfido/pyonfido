@@ -1,6 +1,6 @@
 # PyOnfido [![Build Status](https://travis-ci.org/onfido/pyonfido.svg?branch=master)](https://travis-ci.org/onfido/pyonfido) [![Coverage Status](https://coveralls.io/repos/onfido/pyonfido/badge.svg?branch=master&service=github)](https://coveralls.io/github/onfido/pyonfido?branch=master)
 
-PyOnfido is a Python API client for Onfido's REST API.
+PyOnfido is a Python API client for Onfido's REST API. This package supports both v1 and v2 of the Onfido API.
 
 # Installation
 
@@ -25,6 +25,11 @@ Import the `onfido.Api` class, and create a new instance of it passing your API 
     api = Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA")
 
 It is through this `api` object that you will interact with Onfido API.
+
+
+To use v1 of the Onfido API :
+
+    api = Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA", 'v1')
 
 ## Applicants
 

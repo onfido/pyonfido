@@ -7,10 +7,9 @@ from .addresspicker import AddressPicker  # flake8 : noqa
 
 
 class Api(object):
-    def __init__(self, api_key, requestor=None):
-
+    def __init__(self, api_key, version='v2', requestor=None):
         if not requestor:
-            self.requestor = OnfidoApiRequestor(api_key)
+            self.requestor = OnfidoApiRequestor(api_key, version)
         else:
             self.requestor = requestor
 
