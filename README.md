@@ -90,7 +90,7 @@ The different document types supported by the onfido API are available by import
     my_doc_type = DocumentType.Passport # "passport"
     my_doc_type = DocumentType.NationalIdentityCard # "national_identity_card"
     my_doc_type = DocumentType.WorkPermit # "work_permit"
-    my_doc_type = DocumentType.DrivingLicense # "driving_license"
+    my_doc_type = DocumentType.DrivingLicense # "driving_licence"
     my_doc_type = DocumentType.NationalInsurance # "national_insurance"
     my_doc_type = DocumentType.BirthCertificate # "birth_certificate"
     my_doc_type = DocumentType.BankStatement # "bank_statement"

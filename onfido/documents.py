@@ -7,7 +7,7 @@ class DocumentType():
     Passport = "passport"
     NationalIdentityCard = "national_identity_card"
     WorkPermit = "work_permit"
-    DrivingLicense = "driving_license"
+    DrivingLicense = "driving_licence"
     NationalInsurance = "national_insurance"
     BirthCertificate = "birth_certificate"
     BankStatement = "bank_statement"
