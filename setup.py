@@ -4,8 +4,8 @@ from setuptools import setup
 setup(
     name = "PyOnfido",
     version = "0.4",
-    author = "Sean McLemon",
-    author_email = "sean.mclemon@gmail.com",
+    author = "Onfido",
+    author_email = "engineering@onfido.com",
     description = ("Python wrapper library for Onfido's REST API for background checking."),
     license = "BSD",
     keywords = "pyonfido onfido background",
