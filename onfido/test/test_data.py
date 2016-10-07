@@ -30,6 +30,8 @@ test_page_no = 2
 
 test_per_page = 20
 
+test_photo = io.BytesIO(b"some photo text \x02\x01\x00")
+
 test_document = io.BytesIO(b"some document text \x00\x01\x02")
 
 test_document_filename = "test.bmp"

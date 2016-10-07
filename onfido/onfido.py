@@ -4,6 +4,7 @@ from .documents import Documents  # flake8 : noqa
 from .checks import Checks  # flake8 : noqa
 from .reports import Reports  # flake8 : noqa
 from .addresspicker import AddressPicker  # flake8 : noqa
+from .live_photos import LivePhotos
 
 
 class Api(object):
@@ -18,3 +19,4 @@ class Api(object):
         self.Checks = Checks(self.requestor)
         self.Reports = Reports(self.requestor)
         self.AddressPicker = AddressPicker(self.requestor)
+        self.LivePhotos = LivePhotos(self.requestor)
