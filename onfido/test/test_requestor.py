@@ -39,7 +39,8 @@ class RequestorTests(unittest2.TestCase):
         with requests_mock.mock() as mock_api:
             self.setup_mocks(mock_api)
             api = Api(test_onfido_key)
-            r = api.LivePhotos.create(test_applicant_id, test_photo)
+            r = api.LivePhotos.create(test_applicant_id, test_photo,
+                                      test_photo_filename)
             self.assertEqual("post", r["method"])
 
     def test_get(self):

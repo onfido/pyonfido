@@ -6,14 +6,14 @@ from. api_resource import ApiResource
 
 class LivePhotos(ApiResource):
     """Represents the Live Photos API endpoint."""
-    def create(self, applicant_id, live_photo):
+    def create(self, applicant_id, live_photo, filename):
         """POST to /live_photos
 
         Args:
-            applicant_id: ID of the applicant this photo belongs to (str).
+            applicant_id: ID of the applicant this photo belongs to (string).
             live_photo: The live photo to upload (file-like object).
+            filename: The name of the live photo file (string).
         """
-        filename = live_photo.name
         content_type = mimetypes.guess_type(filename)
         file = {'file': (filename, live_photo, content_type[0])}
         data = {'applicant_id': applicant_id}
