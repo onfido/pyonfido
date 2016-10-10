@@ -107,7 +107,7 @@ The [live_photos](https://documentation.onfido.com/#live-photos) endpoint suppor
 
 	live_photo_file = open("selfie.png", "rb")
 
-	live_photo = api.LivePhotos.create(applicant_id, document_file, "selfie.png")
+	live_photo = api.LivePhotos.create(applicant_id, live_photo_file, "selfie.png")
 
 You can use any file-like object in place of the live_photo_file parameter, so you needn't save to disk and call `open()` if you have the file in, say, an `BytesIO` object in memory.
 
