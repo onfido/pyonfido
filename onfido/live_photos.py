@@ -1,7 +1,7 @@
 """Wrapper for the live photos endpoint."""
 import mimetypes
 
-from. api_resource import ApiResource
+from .api_resource import ApiResource
 
 
 class LivePhotos(ApiResource):
@@ -15,6 +15,6 @@ class LivePhotos(ApiResource):
             filename: The name of the live photo file (string).
         """
         content_type = mimetypes.guess_type(filename)
-        file = {'file': (filename, live_photo, content_type[0])}
+        file_data = {'file': (filename, live_photo, content_type[0])}
         data = {'applicant_id': applicant_id}
-        return self.post('live_photos', data, file)
+        return self.post('live_photos', data, file_data)
