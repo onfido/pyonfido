@@ -41,6 +41,11 @@ class InterfaceTests(ResourceTestCase):
         self.setup()
         self.api.Documents.create(test_applicant_id, test_document, test_document_filename, test_document_type)
 
+    def test_live_photos_interface(self):
+        self.setup()
+        self.api.LivePhotos.create(test_applicant_id, test_photo,
+                                   test_photo_filename)
+
     def test_checks_interface(self):
         self.setup()
         self.api.Checks.create(test_applicant_id, test_check)
@@ -97,6 +102,13 @@ class ResourcePathAndMethodTests(ResourceTestCase):
         self.assertEqual(
             "applicants/{0}/documents/".format(test_applicant_id),
             result["url"])
+        self.assertEqual("post", result["method"])
+
+    def test_live_photos_path_method(self):
+        self.setup()
+        result = self.api.LivePhotos.create(test_applicant_id, test_photo,
+                                            test_photo_filename)
+        self.assertEqual("live_photos", result["url"])
         self.assertEqual("post", result["method"])
 
     def test_checks_create_path_method(self):

@@ -95,6 +95,21 @@ The different document types supported by the onfido API are available by import
     my_doc_type = DocumentType.BirthCertificate # "birth_certificate"
     my_doc_type = DocumentType.BankStatement # "bank_statement"
     my_doc_type = DocumentType.Unknown # "unknown"
+    
+## Live Photos
+
+The [live_photos](https://documentation.onfido.com/#live-photos) endpoint supports one operation - `create()`:
+
+
+#### Upload document
+
+	applicant_id = "1030303-123123-123123"
+
+	live_photo_file = open("selfie.png", "rb")
+
+	live_photo = api.LivePhotos.create(applicant_id, document_file, "selfie.png")
+
+You can use any file-like object in place of the live_photo_file parameter, so you needn't save to disk and call `open()` if you have the file in, say, an `BytesIO` object in memory.
 
 ## Checks
 

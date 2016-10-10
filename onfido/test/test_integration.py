@@ -57,6 +57,15 @@ class IntegrationTest(unittest2.TestCase):
 
         self.assertIn("id", doc_response)
 
+    def test_integration_live_photo(self):
+        api = self.create_api()
+        applicant = api.Applicants.all()["applicants"][0]
+        live_photo = open("onfido/test/passport.png", "rb")
+        response = api.LivePhotos.create(applicant["id"], live_photo,
+                                         'passport.png')
+
+        self.assertIn("id", response)
+
     def test_integration_check(self):
         api = self.create_api()
         input_applicant = self.create_input_applicant()
