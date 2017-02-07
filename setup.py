@@ -3,18 +3,18 @@ from setuptools import setup
 
 setup(
     name = "PyOnfido",
-    version = "0.5",
+    version = "0.6",
     author = "Onfido",
     author_email = "engineering@onfido.com",
     description = ("Python wrapper library for Onfido's REST API for background checking."),
     license = "BSD",
     keywords = "pyonfido onfido background",
     url = "https://github.com/onfido/pyonfido",
-    download_url = 'https://github.com/onfido/pyonfido/tarball/0.5',
+    download_url = 'https://github.com/onfido/pyonfido/tarball/0.6',
     packages=['onfido', 'onfido.test'],
     test_suite='onfido.test.all',
     classifiers=[
-        "Development Status :: 5 - Production/Stable ",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Topic :: Software Development :: Libraries",
