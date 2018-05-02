@@ -24,14 +24,14 @@ Import the `onfido.Api` class, and create a new instance of it passing your API 
 
     # ...
 
-    api = Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA")
+    api = Api("YOUR_TOKEN_HERE")
 
 It is through this `api` object that you will interact with Onfido API.
 
 
 To use v1 of the Onfido API :
 
-    api = Api("live_yV85IsmuYwmjQGlZ-4cNqdLSqOLbCtKA", 'v1')
+    api = Api("<YOUR_TOKEN_HERE>", 'v1')
 
 ## Applicants
 
