@@ -28,12 +28,12 @@ setup(
         "Programming Language :: Python :: 3.5",
     ],
     install_requires=[
-        'requests==2.13.0',
+        'requests==2.20.0',
         'requests_mock',
         'unittest2'
     ],
     setup_requires=[
-        'requests==2.13.0',
+        'requests==2.20.0',
         'requests_mock',
         'unittest2'
     ],
